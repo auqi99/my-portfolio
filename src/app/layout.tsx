@@ -1,3 +1,9 @@
+import Footer from "@/components/Footer";
+import Jumbotron from "@/components/Jumbotron";
+import Navbar from "@/components/Navbar";
+import Projects from "@/components/Project";
+import Skill from "@/components/Skill";
+import Testimonials from "@/components/Testimonials";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -27,7 +33,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
+        <Jumbotron />
+        <Projects />
+        <Testimonials />
+        <Skill />
         {children}
+        <Footer />
       </body>
     </html>
   );

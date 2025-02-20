@@ -1,11 +1,10 @@
-
-export default function Home() {
+const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex min-h-screen items-center justify-center bg-purple-950"
+      className="flex min-h-screen items-center justify-center bg-blue-950"
     >
-      <div className="mt-16 h-[520px] w-[500px] rounded-lg bg-black p-7 shadow-lg">
+      <div className="h-[520px] w-[500px] rounded-lg bg-black p-7 shadow-lg mt-16">
         <h1 className="mb-6 text-center text-2xl font-bold text-gray-300">
           Hi !!!
         </h1>
@@ -55,4 +54,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Contact;
