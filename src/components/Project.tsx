@@ -1,174 +1,80 @@
-const Projects = () => {
+const Project = () => {
+  const projectCards = [
+    {
+      title: "Situation",
+      content:
+        "Saya mengembangkan Event Management Dashboard, sebuah platform berbasis web untuk membantu event organizer dalam mengelola tiket, transaksi, dan daftar peserta secara efisien. Proyek ini dibuat karena banyak penyelenggara acara kesulitan melacak penjualan tiket dan data peserta dalam satu sistem terintegrasi.",
+    },
+    {
+      title: "Task",
+      content:
+        "Membangun sistem yang memungkinkan event organizer membuat, mengedit, dan mengelola event dengan mudah.\nMenampilkan statistik penjualan tiket secara real-time.\nMengelola daftar peserta dan verifikasi pembayaran.\nMendesain UI/UX yang clean dan responsif agar mudah digunakan oleh pengguna.",
+    },
+    {
+      title: "Action",
+      content:
+        "Frontend: Menggunakan React.js dan Tailwind CSS untuk membangun UI yang responsif.\nBackend: Menggunakan Next.js (API Routes) dan Prisma ORM untuk mengelola data di database PostgreSQL.\nAuthentication: Menggunakan NextAuth.js untuk sistem login event organizer.\nState Management: Menggunakan Zustand untuk state global agar performa lebih ringan dibanding Redux.\nData Visualization: Menggunakan Recharts.js untuk menampilkan laporan penjualan tiket.\nDeployment: Menggunakan Vercel untuk hosting frontend dan backend.",
+    },
+    {
+      title: "Result",
+      content:
+        "Mempercepat pengelolaan event → Event organizer dapat membuat dan mengelola acara dalam hitungan menit.\n\nMeningkatkan efisiensi tracking transaksi → Dengan dashboard statistik, organizer dapat melihat jumlah tiket terjual, total pendapatan, dan daftar peserta secara real-time.\n\nMeningkatkan pengalaman pengguna → UI yang clean dan responsif membuat pengguna merasa nyaman saat mengelola event.\n\nSukses diterapkan pada event lokal → Digunakan dalam 3 event lokal, dengan lebih dari 500 tiket terjual dalam uji coba awal.",
+    },
+  ];
+
   return (
-    <div id="projects" className="bg-slate-950 text-slate-300 h-auto p-20">
-      <h2 className="text-3xl font-bold mb-4 text-center">
-        Let's view my projects
-      </h2>
+    <section
+      id="projects"
+      className="container m-auto w-full bg-slate-900 py-24 text-white"
+    >
+      <p className="text-center font-semibold">Let's view what I got</p>
 
-      <div className="space-y-4">
-        {/* Baris pertama (3 card) */}
-        <div className="grid grid-cols-3 gap-4">
-          {/* Card 1 */}
-          <div className="group relative block">
-            <div className="relative h-[200px] sm:h-[200px] max-w-xs mx-auto">
-              <img
-                src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-lg"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col items-start justify-end pl-8 mb-0">
-              <h3 className="text-lg font-medium text-white">
-                Skinny Jeans Blue
-              </h3>
-              <p className="mt-1 text-xs text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos sequi dicta impedit aperiam ipsum!
-              </p>
-              <a
-                href="#"
-                className="mt-2 inline-block bg-black px-4 py-2 text-xs font-medium tracking-wide text-white"
-              >
-                Click here
-              </a>
-            </div>
+      <div className="mt-10 flex flex-col items-center gap-11">
+        <div className="group relative h-64 w-64 overflow-hidden rounded-lg bg-gray-800 shadow-lg">
+          <div className="relative h-40">
+            <img
+              src="https://images.unsplash.com/photo-1593795899768-947c4929449d?auto=format&fit=crop&w=500&q=80"
+              alt="Project 1"
+              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?auto=format&fit=crop&w=500&q=80"
+              alt="Project 1"
+              className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            />
           </div>
-
-          {/* Card 2 */}
-          <div className="group relative block">
-            <div className="relative h-[200px] sm:h-[200px] max-w-xs mx-auto">
-              <img
-                src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-lg"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col items-start justify-end pl-8 mb-0">
-              <h3 className="text-lg font-medium text-white">
-                Skinny Jeans Blue
-              </h3>
-              <p className="mt-1 text-xs text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos sequi dicta impedit aperiam ipsum!
-              </p>
-              <a
-                href="#"
-                className="mt-2 inline-block bg-black px-4 py-2 text-xs font-medium tracking-wide text-white"
-              >
-                Click here
-              </a>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="group relative block">
-            <div className="relative h-[200px] sm:h-[200px] max-w-xs mx-auto">
-              <img
-                src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-lg"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col items-start justify-end pl-8 mb-0">
-              <h3 className="text-lg font-medium text-white">
-                Skinny Jeans Blue
-              </h3>
-              <p className="mt-1 text-xs text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos sequi dicta impedit aperiam ipsum!
-              </p>
-              <a
-                href="#"
-                className="mt-2 inline-block bg-black px-4 py-2 text-xs font-medium tracking-wide text-white"
-              >
-                Click here
-              </a>
-            </div>
+          <div className="p-3">
+            <h3 className="text-sm font-semibold text-white">Project One</h3>
+            <p className="mt-1 text-xs text-gray-400">
+              A brief description of the project goes here.
+            </p>
+            <a
+              href="#"
+              className="mt-2 inline-block rounded-md bg-blue-500 px-3 py-1 text-xs font-medium text-white transition hover:bg-blue-600"
+            >
+              View Project
+            </a>
           </div>
         </div>
 
-        {/* Baris kedua (2 card) */}
-        <div className="grid grid-cols-2 gap-4">
-          {/* Card 4 */}
-          <div className="group relative block">
-            <div className="relative h-[200px] sm:h-[250px] max-w-xs mx-auto">
-              <img
-                src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-lg"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col items-start justify-end pl-32">
-              <h3 className="text-lg font-medium text-white">
-                Skinny Jeans Blue
-              </h3>
-              <p className="mt-1 text-xs text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
-                Dignissimos sequi dicta impedit aperiam ipsum!
+        <div className="grid w-full max-w-4xl grid-cols-1 place-items-center gap-11 px-4 sm:grid-cols-2 sm:px-0 md:grid-cols-3">
+          {projectCards.map((card, index) => (
+            <div
+              key={index}
+              className={`flex h-72 w-full flex-col items-center justify-center rounded-lg bg-gray-300 p-4 text-center shadow-md sm:w-72 ${
+                index === 3 ? "sm:col-span-2 md:col-span-full" : ""
+              }`}
+            >
+              <h3 className="text-sm font-bold text-gray-900">{card.title}</h3>
+              <p className="mt-2 whitespace-pre-line text-xs text-gray-700">
+                {card.content}
               </p>
-              <a
-                href="#"
-                className="mt-2 inline-block bg-black px-4 py-2 text-xs font-medium tracking-wide text-white"
-              >
-                Click here
-              </a>
             </div>
-          </div>
-
-          {/* Card 5 */}
-          <div className="group relative block">
-            <div className="relative h-[200px] sm:h-[250px] max-w-xs mx-auto">
-              <img
-                src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-lg"
-              />
-            </div>
-            <div className="absolute inset-0 flex flex-col items-start justify-end pl-32">
-              <h3 className="text-lg font-medium text-white">
-                Skinny Jeans Blue
-              </h3>
-              <p className="mt-1 text-xs text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
-                Dignissimos sequi dicta impedit aperiam ipsum!
-              </p>
-              <a
-                href="#"
-                className="mt-2 inline-block bg-black px-4 py-2 text-xs font-medium tracking-wide text-white"
-              >
-                Click here
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Projects;
+export default Project;
