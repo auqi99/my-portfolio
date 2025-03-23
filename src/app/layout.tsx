@@ -15,8 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wellcome to Auqi Portfolio",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"), // Ganti dengan URL production Anda
+  title: "Welcome to Auqi Portfolio",
   description: "It is a Portfolio website",
+  openGraph: {
+    title: "Welcome to Auqi Portfolio",
+    description: "It is a Portfolio website",
+    images: "/opengraph-image.jpg", // Path relatif ke gambar Open Graph
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Welcome to Auqi Portfolio",
+    description: "It is a Portfolio website",
+    images: "/opengraph-image.jpg", // Path relatif ke gambar Twitter Card
+  },
 };
 
 export default function RootLayout({

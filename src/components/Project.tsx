@@ -4,17 +4,17 @@ const data = [
   {
     thumbnail: "/rocket.svg",
     title: "Project 1",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+    description: "Dummy Data...",
   },
   {
     thumbnail: "/virtual.svg",
     title: "Project 2",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+    description: "Dummy Data...",
   },
   {
     thumbnail: "/collab.svg",
     title: "Project 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+    description: "Dummy Data...",
   },
 ];
 
