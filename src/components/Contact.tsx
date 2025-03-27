@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGAEvent } from "@/utils/google-analytics";
 import { useState } from "react";
 
 const Contact = () => {
@@ -50,7 +51,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex py-20 items-center justify-center bg-gray-900 px-4"
+      className="flex items-center justify-center bg-gray-900 px-4 py-20"
     >
       <div className="max-w-md rounded-lg bg-black p-7 shadow-lg sm:px-10 md:px-16">
         <h1 className="mb-6 text-center text-2xl font-bold text-gray-300">
@@ -112,8 +113,11 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none"
+            className="w-full cursor-pointer rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none"
             disabled={loading}
+            onClick={() =>
+              sendGAEvent("form-submit", "submit_button", "user_interaction")
+            }
           >
             {loading ? "sending..." : "Submit"}
           </button>

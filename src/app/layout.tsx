@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"), // Ganti dengan URL production Anda
+    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+  ), // Ganti dengan URL production Anda
   title: "Welcome to Auqi Portfolio",
   description: "It is a Portfolio website",
   openGraph: {
@@ -46,6 +48,8 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-RJF843ZYQL" />
+      {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID!}/> */}
     </html>
   );
 }

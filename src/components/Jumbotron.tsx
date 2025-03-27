@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa6";
+import { BsGithub } from "react-icons/bs";
+import { sendGAEvent } from "@/utils/google-analytics";
 
 const Jumbotron = () => {
   return (
@@ -27,6 +32,35 @@ const Jumbotron = () => {
               <p className="motion-preset-seesaw">
                 Let's connect if you're interested in collaboration or have a
                 project in mind!
+              </p>
+
+              <p className="flex items-center gap-4 text-3xl">
+                <a
+                  href="https://www.linkedin.com/in/aulia-rifqi-0a910a320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  onClick={() =>
+                    sendGAEvent(
+                      "click_linkedin",
+                      "linkedin_profile",
+                      "social_media",
+                    )
+                  }
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://github.com/auqi99"
+                  target="_blank"
+                  onClick={() =>
+                    sendGAEvent(
+                      "click_github",
+                      "github_profile",
+                      "social_media",
+                    )
+                  }
+                >
+                  <BsGithub />
+                </a>
               </p>
             </div>
           </div>
